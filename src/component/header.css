@@ -1,0 +1,39 @@
+.navbar{
+width: 90%;
+margin: auto;
+padding: 3rem 0rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding-bottom: 6rem;
+/* border : 1px solid #6c3636; */
+}
+
+.logo-img{
+    width: 80px;
+}
+
+
+
+.menu{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 50%; */
+    gap: 7rem;
+    color: #333333;
+    font-weight: 500;
+    
+}
+
+.profile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+li{
+    cursor: pointer;
+}
