@@ -60,6 +60,7 @@ const Login = () => {
                                     className="mt-5 tracking-wide font-semibold bg-[#e3e3e3] text-white-500 w-full py-4 rounded-lg hover:bg-[#b8b7b7] transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
                                     onClick={(e) => {
                                         e.preventDefault()
+                                        localStorage.setItem('isLoggedIn', true);
                                         navigate('/')
                                     }}>
                                     <svg className="w-6 h-6 -ml-2" fill="none" stroke="currentColor" stroke-width="2"
