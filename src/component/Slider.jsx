@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./slider.css";
 import leftbtn from "../assets/chevron-left.svg";
@@ -14,6 +14,7 @@ import pump from "../assets/pump.svg";
 import seat from "../assets/seat.svg";
 import engine from "../assets/engine.svg";
 import Header from "./Header";
+import { useNavigate } from "react-router-dom";
 
 const cars = [
   {
@@ -72,6 +73,7 @@ const specsStaggerItem = {
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const nextSlide = () => {
     setCurrentSlide((prevSlide) =>
@@ -92,6 +94,16 @@ const Slider = () => {
   const openDetails = () => {
     setIsDetailsOpen(true);
   };
+
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn")
+    if(!isLoggedIn){
+      setTimeout(() => {
+        navigate('/login');
+      },2000)
+      
+    }
+  },[navigate])
 
   return (
     <>
@@ -177,9 +189,8 @@ const Slider = () => {
             {cars.map((_, index) => (
               <span
                 key={index}
-                className={`indicator-item ${
-                  index === currentSlide ? "active" : ""
-                }`}
+                className={`indicator-item ${index === currentSlide ? "active" : ""
+                  }`}
                 onClick={() => setCurrentSlide(index)}
               ></span>
             ))}

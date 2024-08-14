@@ -28,10 +28,12 @@ align-items: center;
 }
 
 .profile{
+    width: min-content;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
+    border: 1px solid #333333;
 }
 
 li{
