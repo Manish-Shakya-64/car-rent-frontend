@@ -1,39 +1,23 @@
 .navbar{
-width: 90%;
-margin: auto;
-padding: 3rem 0rem;
-display: flex;
-justify-content: space-between;
-align-items: center;
-
-/* border : 1px solid #6c3636; */
+    @apply m-auto px-0 py-12 flex justify-evenly items-center;
 }
 
 .logo-img{
-    width: 80px;
+    width: 100px;
 }
 
-
-
-.menu{
-    display: flex;
-    list-style-type: none;
-    justify-content: space-between;
-    align-items: center;
-    /* width: 50%; */
-    gap: 7rem;
-    color: #333333;
-    font-weight: 500;
-    
-}
-
+.menu {
+    @apply flex list-none justify-between items-center gap-[6rem] text-[#333333] font-medium;
+  }
+  
 .profile{
-    width: min-content;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    border: 1px solid #333333;
+    @apply w-max flex justify-between items-center gap-4;
+    /* border: 1px solid #333333; */
+}
+
+.logout-button{
+    @apply cursor-pointer p-1;
+
 }
 
 li{

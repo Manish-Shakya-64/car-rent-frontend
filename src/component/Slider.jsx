@@ -14,7 +14,6 @@ import pump from "../assets/pump.svg";
 import seat from "../assets/seat.svg";
 import engine from "../assets/engine.svg";
 import Header from "./Header";
-import { useNavigate } from "react-router-dom";
 
 const cars = [
   {
@@ -73,7 +72,6 @@ const specsStaggerItem = {
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
-  const navigate = useNavigate();
 
   const nextSlide = () => {
     setCurrentSlide((prevSlide) =>
@@ -95,15 +93,7 @@ const Slider = () => {
     setIsDetailsOpen(true);
   };
 
-  useEffect(() => {
-    const isLoggedIn = localStorage.getItem("isLoggedIn")
-    if(!isLoggedIn){
-      setTimeout(() => {
-        navigate('/login');
-      },2000)
-      
-    }
-  },[navigate])
+
 
   return (
     <>
